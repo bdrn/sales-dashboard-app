@@ -1,11 +1,33 @@
 import supabase from "./supabase-client";
 import { useEffect, useState } from "react";
 import { Chart } from "react-charts";
+import Form from "./Form";
 
 function Dashboard() {
   const [metrics, setMetrics] = useState([]);
+
   useEffect(() => {
     fetchMetrics();
+
+    const channel = supabase
+      .channel("deal-changes")
+      .on(
+        "postgres_changes",
+        {
+          event: "*",
+          schema: "public",
+          table: "sales_deals",
+        },
+        (payload) => {
+          fetchMetrics();
+        },
+      )
+      .subscribe();
+
+    // Clean up subscription
+    return () => {
+      supabase.removeChannel(channel);
+    };
   }, []);
 
   async function fetchMetrics() {
@@ -82,6 +104,7 @@ function Dashboard() {
           />
         </div>
       </div>
+      <Form metrics={metrics} />
     </div>
   );
 }
