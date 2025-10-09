@@ -21,7 +21,9 @@ export default [
     },
     rules: {
       "prettier/prettier": "error",
+      "react/react-in-jsx-scope": "off",
     },
   },
   configPrettier,
 ];
+("");
