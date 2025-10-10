@@ -1,7 +1,7 @@
 const Signin = () => {
   return (
     <>
-      <h1 className="landing-header">Sales Team Dashboard</h1>
+      <h1 className="landing-header">Sales Dashboard</h1>
     </>
   );
 };
