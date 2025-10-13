@@ -22,20 +22,20 @@ select {
 }
 
 h2 {
-  letter-spacing: -0.7px; /* Extra tightening for headings */
+  letter-spacing: -0.7px;
   font-weight: 400;
 }
 
 header {
   background-color: #134e32;
   width: 100vw;
-  box-sizing: border-box; /* new */
+  box-sizing: border-box;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  padding: 0.4rem; /* new */
-  height: 7rem; /* new */
+  padding: 0.4rem;
+  height: 7rem;
   display: flex;
   flex-direction: column;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -63,7 +63,7 @@ header h1 {
 
 .header-email h2 {
   margin: 0;
-  font-size: 0.8rem; /* new */
+  font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.8);
   font-weight: 400;
   letter-spacing: 0px;
@@ -75,20 +75,21 @@ header h1 {
 
 .header-email button {
   display: inline-block;
-  padding: 0.2rem 0.4rem; /* new */
+  padding: 0.2rem 0.4rem;
   margin-top: 0;
-  border: 0.5px solid rgba(255, 255, 255, 0.8); /* new */
-  border-radius: 6px;
+  border: 0.5px solid rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
   cursor: pointer;
-  background-color: #134e32; /* new */
-  color: rgba(255, 255, 255, 0.8); /* new */
-  font-size: 0.8rem; /* new */
+  background-color: #134e32;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.8rem;
   font-weight: 500;
   transition: all 0.2s ease;
+  margin: 0 15px;
 }
 
 .header-email button:hover {
-  background-color: #124f33; /* new */
+  background-color: #124f33;
   border-color: #f0f0f0;
   transform: translateY(-1px);
 }
@@ -273,7 +274,7 @@ input:disabled {
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease;
-  box-sizing: border-box; /* Ensures padding is included in width calculation */
+  box-sizing: border-box;
 }
 
 .sign-form-container .form-input:focus {
@@ -346,11 +347,10 @@ input:disabled {
 .sign-form-container .radio-group label {
   margin-left: 3.5rem;
   flex: 1;
-  text-align: center; /* optional: center label text */
+  text-align: center;
   align-items: center;
 }
 
-/* default styling for input radio button when no checked */
 .sign-form-container .radio-group input:not(:checked) {
   appearance: none;
   -webkit-appearance: none;
@@ -371,7 +371,6 @@ input:disabled {
   height: 16px;
 }
 
-/* landing header */
 .landing-header {
   text-align: center;
   font-size: 3.5rem;

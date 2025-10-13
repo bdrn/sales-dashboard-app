@@ -34,17 +34,19 @@ function Dashboard() {
     try {
       const { data, error } = await supabase.from("sales_deals").select(
         `
-          name,
-          value.sum()
+          value.sum(),
+          ...user_profiles!inner(
+            name
+          )
           `,
       );
       if (error) {
         throw error;
       }
-      console.log(data);
+      console.log("Fetched metrics:", data);
       setMetrics(data);
     } catch (error) {
-      console.error("Error fetching metrics: ", error);
+      console.error("Error fetching metrics:", error.message);
     }
   }
 
